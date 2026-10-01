@@ -1,0 +1,520 @@
+/* ==========================================================================
+   Calderas CESI - Hoja de Estilos Corporativa (MVP Incidencias y Mantenimiento)
+   ========================================================================== */
+
+:root {
+  --cesi-blue-dark: #0d2238;
+  --cesi-blue-primary: #154360;
+  --cesi-blue-light: #2980b9;
+  --cesi-flame-primary: #d35400;
+  --cesi-flame-light: #e67e22;
+  --cesi-flame-soft: #fdf2e9;
+  --cesi-bg: #f4f6f9;
+  --cesi-card-bg: #ffffff;
+  --cesi-text-dark: #1c2833;
+  --cesi-text-muted: #566573;
+  --cesi-border: #d5dbdb;
+  --cesi-success: #27ae60;
+  --cesi-danger: #c0392b;
+  --cesi-warning: #f39c12;
+  --cesi-radius: 8px;
+  --cesi-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  background-color: var(--cesi-bg);
+  color: var(--cesi-text-dark);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Encabezado y Navegación */
+.site-header {
+  background: linear-gradient(135deg, var(--cesi-blue-dark) 0%, var(--cesi-blue-primary) 100%);
+  color: #ffffff;
+  border-bottom: 4px solid var(--cesi-flame-primary);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand-link {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.brand-logo-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.brand-logo-text span {
+  color: var(--cesi-flame-light);
+}
+
+.brand-tagline {
+  font-size: 0.75rem;
+  color: #abb2b9;
+  display: block;
+  font-weight: 400;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.25rem;
+}
+
+.nav-links a {
+  color: #eaecee;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--cesi-radius);
+  transition: all 0.2s ease;
+}
+
+.nav-links a:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #ffffff;
+}
+
+.nav-badge-user {
+  background-color: rgba(0, 0, 0, 0.25);
+  padding: 0.35rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  color: #d5dbdb;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.nav-badge-user strong {
+  color: #ffffff;
+}
+
+/* Contenedor Principal */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1.5rem;
+}
+
+/* Alertas Flash */
+.flash-message {
+  padding: 1rem 1.25rem;
+  border-radius: var(--cesi-radius);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flash-exito {
+  background-color: #d4efdf;
+  color: #196f3d;
+  border-left: 5px solid #27ae60;
+}
+
+.flash-error {
+  background-color: #fadbd8;
+  color: #943126;
+  border-left: 5px solid #c0392b;
+}
+
+.flash-aviso {
+  background-color: #fdebd0;
+  color: #9c640c;
+  border-left: 5px solid #f39c12;
+}
+
+.flash-info {
+  background-color: #d6eaf8;
+  color: #21618c;
+  border-left: 5px solid #2980b9;
+}
+
+/* Tarjetas y Contenedores */
+.card {
+  background: var(--cesi-card-bg);
+  border-radius: var(--cesi-radius);
+  padding: 1.75rem;
+  box-shadow: var(--cesi-shadow);
+  border: 1px solid var(--cesi-border);
+  margin-bottom: 2rem;
+}
+
+.card-header {
+  border-bottom: 1px solid #ebedef;
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--cesi-blue-primary);
+}
+
+/* Cuadrículas de Estadísticas */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.stat-card {
+  background: #ffffff;
+  padding: 1.25rem;
+  border-radius: var(--cesi-radius);
+  border: 1px solid var(--cesi-border);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+  text-align: center;
+  border-top: 4px solid var(--cesi-blue-light);
+}
+
+.stat-card.alert {
+  border-top-color: var(--cesi-flame-primary);
+}
+
+.stat-number {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--cesi-blue-dark);
+  margin-top: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--cesi-text-muted);
+  font-weight: 600;
+}
+
+/* Tablas */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.table-custom th {
+  background-color: #eaeded;
+  color: var(--cesi-blue-dark);
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--cesi-border);
+}
+
+.table-custom td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid #ebedef;
+  vertical-align: middle;
+}
+
+.table-custom tr:hover {
+  background-color: #f8f9f9;
+}
+
+/* Insignias (Badges) */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.65rem;
+  border-radius: 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.badge-estado-nueva {
+  background-color: #d6eaf8;
+  color: #1b4f72;
+}
+
+.badge-estado-asignada {
+  background-color: #fcf3cf;
+  color: #7d6608;
+}
+
+.badge-estado-proceso {
+  background-color: #fdebd0;
+  color: #b9770e;
+}
+
+.badge-estado-resuelta {
+  background-color: #d4efdf;
+  color: #1e8449;
+}
+
+.badge-estado-cerrada {
+  background-color: #eaecee;
+  color: #5d6d7e;
+}
+
+.badge-prio-baja {
+  background-color: #e8f8f5;
+  color: #117864;
+}
+
+.badge-prio-media {
+  background-color: #ebf5fb;
+  color: #2874a6;
+}
+
+.badge-prio-alta {
+  background-color: #fef5e7;
+  color: #b9770e;
+}
+
+.badge-prio-urgente {
+  background-color: #fadbd8;
+  color: #943126;
+  font-weight: 800;
+}
+
+/* Formularios */
+.form-group {
+  margin-bottom: 1.25rem;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--cesi-blue-dark);
+  font-size: 0.92rem;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.7rem 0.9rem;
+  border: 1px solid var(--cesi-border);
+  border-radius: var(--cesi-radius);
+  font-size: 0.95rem;
+  background-color: #ffffff;
+  color: var(--cesi-text-dark);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--cesi-blue-light);
+  box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+}
+
+.form-help {
+  font-size: 0.8rem;
+  color: var(--cesi-text-muted);
+  margin-top: 0.3rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.25rem;
+  border-radius: var(--cesi-radius);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.btn-primary {
+  background-color: var(--cesi-blue-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--cesi-blue-dark);
+}
+
+.btn-flame {
+  background-color: var(--cesi-flame-primary);
+  color: #ffffff;
+}
+
+.btn-flame:hover {
+  background-color: #b94600;
+}
+
+.btn-secondary {
+  background-color: #eaeded;
+  color: var(--cesi-text-dark);
+  border: 1px solid var(--cesi-border);
+}
+
+.btn-secondary:hover {
+  background-color: #d5dbdb;
+}
+
+.btn-sm {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.82rem;
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+/* Tarjeta de Inicio / Login */
+.auth-wrapper {
+  max-width: 480px;
+  margin: 3rem auto;
+}
+
+/* Detalle de Incidencia */
+.incident-header-banner {
+  background: #f8f9fa;
+  border-left: 5px solid var(--cesi-flame-primary);
+  padding: 1.25rem;
+  border-radius: var(--cesi-radius);
+  margin-bottom: 1.5rem;
+}
+
+.incident-ref {
+  font-family: monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--cesi-blue-dark);
+}
+
+.timeline {
+  list-style: none;
+  border-left: 2px solid var(--cesi-border);
+  padding-left: 1.5rem;
+  margin-left: 0.5rem;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -1.95rem;
+  top: 0.3rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--cesi-flame-primary);
+  border: 2px solid #ffffff;
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--cesi-text-muted);
+}
+
+.comment-card {
+  border: 1px solid #eaeded;
+  border-radius: var(--cesi-radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+  background-color: #ffffff;
+}
+
+.comment-card.interno {
+  background-color: #fef9e7;
+  border-color: #f9e79f;
+  border-left: 4px solid #f39c12;
+}
+
+.comment-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--cesi-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+/* Pie de Página */
+.site-footer {
+  background-color: var(--cesi-blue-dark);
+  color: #abb2b9;
+  padding: 2rem 1.5rem 1.5rem;
+  margin-top: auto;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.88rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.footer-copy strong {
+  color: #ffffff;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .header-container, .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .main-content {
+    margin: 1rem auto;
+    padding: 0 1rem;
+  }
+}
